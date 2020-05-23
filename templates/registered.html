@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% for id in id_person %}
+        <li class="list-group-item"{{id_person}}>{{id}}</li>
+    {% endfor %}
+{% endblock %}

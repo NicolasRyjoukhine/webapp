@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{%block style%}
+<style>
+body {
+  background-color: white;
+}
+.title_style{
+  color: white;
+  height: 100;
+  background-color: grey;
+  text-align: center;
+  border : 5px black solid;
+}
+.main{
+  width: 80%
+  height:80%
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+{% endblock %}
+
+{%block body%}
+    <h1 color="white" class="title_style">Register here</h1>
+    <form action="/register_post" method="post">
+        <div>
+            <label class="p">First Name</label>
+            <input type ="text" id="name_person_register">
+        </div>
+        <br>
+        <div class="p">
+            <label>Family Name</label>
+            <input type ="text" id="family_name_person_register">
+        </div>
+        <br>
+        <div class="container">
+            <label>Hobby</label>
+            <select id="hobbies_person_register">
+                <option value="hobby">none</option>
+                <option value="Football">Football</option>
+                <option value="Hockey">Hockey</option>
+                <option value="Coding">Coding</option>
+                {% for hobby in hobbies %}
+                    <option value={{hobby}}>{{hobby}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div class="p">
+            <label>Add new hobby:</label>
+            <input type ="text" name="new_hobby_person_register">
+            <button type="register_hobby">Register</button>
+        </div>
+    </form>
+{% endblock %}
